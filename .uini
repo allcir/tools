@@ -1,0 +1,1 @@
+open_basedir="E:\Workspace_upupw_nginx_5.5.3\vhosts\test.tools.com\;E:\Workspace_upupw_nginx_5.5.3\memcached\;E:\Workspace_upupw_nginx_5.5.3\phpmyadmin\;E:\Workspace_upupw_nginx_5.5.3\temp\;C:\Windows\Temp\"
