@@ -11,7 +11,7 @@ After creating the basic application, follow these steps to prepare for the test
    composer global require "codeception/specify=*"
    composer global require "codeception/verify=*"
    ```
-
+ 
    If you've never used Composer for global packages run `composer global status`. It should output:
 
    ```
