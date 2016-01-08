@@ -9,6 +9,7 @@ use app\models\ArticleData21;
 
 class ArticleController extends Controller{
 
+	//文章导入
 	public function actionIndex(){
 		
 		$old = new Article21Old();
