@@ -1,7 +1,7 @@
 @echo off
 
 rem -------------------------------------------------------------
-rem  Yii command line bootstrap script for Windows.
+rem  Yii command line bootstrap script for Windows. 
 rem
 rem  @author Qiang Xue <qiang.xue@gmail.com>
 rem  @link http://www.yiiframework.com/
