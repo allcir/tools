@@ -10,6 +10,8 @@ use app\models\Area;
 use app\models\Info22Old;
 use app\models\Info22;
 use app\models\InfoData22;
+use app\models\Company;
+use app\models\Member;
 
 class DataController extends Controller{
 
@@ -243,6 +245,48 @@ class DataController extends Controller{
 		}
 	
 	}	
+	
+	public function actionMove(){
+		
+		$info1 = new Info22();
+		$company = new Company();
+		
+		$offset = isset($_GET['offset']) ? $_GET['offset'] : '0';
+		
+		$rs = $info1->find()->offset($offset)->limit(100)->orderBy('itemid ASC')->all();
+		
+		if($rs){
+			/*
+			foreach($rs as $v){
+				$company = Company::find()->select(['telephone','fax','mail','address'])
+				->where('username="'.$v['username'].'"')->asArray()->one();
+				if($company){
+					$v['telephone'] = $company['telephone'];
+					$v['fax'] = $company['fax'];
+					$v['email'] = $company['mail'];
+					$v['address'] = $company['address'];
+					$v->update(false);
+				}
+			}*/
+
+			foreach($rs as $v){
+				$member = Member::find()->select(['truename','qq'])
+				->where('username="'.$v['username'].'"')->asArray()->one();
+				if($member){
+					$v['truename'] = $member['truename'];
+					$v['qq'] = $member['qq'];
+					$v->update(false);
+				}
+			}
+
+			$num = $offset + 100;
+			
+			return $this->render('move',['num'=>$num]);
+			
+		}else{
+			echo '0k!!!!!!!!!!';
+		}
+	}
 
 	public function actionAgency(){
 		exit();
